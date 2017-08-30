@@ -21,9 +21,9 @@
         android:id="@+id/license_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
+        android:gravity="top|center_horizontal"
         android:paddingBottom="8dp"
-        android:paddingTop="8dp"
+        android:paddingTop="64dp"
         android:text="@string/fmt_license_text"
         android:textColor="@color/colorBlack"
         android:textSize="16sp"
@@ -40,7 +40,6 @@
         android:paddingBottom="8dp"
         android:textColor="@color/colorBlack"
         android:textSize="16sp"
-        android:background="@color/colorGreen"
         android:text="@string/fmt_license_agree" />
 
     <ProgressBar
