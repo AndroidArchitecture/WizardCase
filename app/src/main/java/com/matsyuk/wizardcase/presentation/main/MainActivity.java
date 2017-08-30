@@ -1,7 +1,9 @@
-package com.matsyuk.wizardcase;
+package com.matsyuk.wizardcase.presentation.main;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.matsyuk.wizardcase.R;
 
 public class MainActivity extends AppCompatActivity {
 
