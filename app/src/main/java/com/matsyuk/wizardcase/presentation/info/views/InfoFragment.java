@@ -13,6 +13,7 @@ import com.arellomobile.mvp.presenter.InjectPresenter;
 import com.arellomobile.mvp.presenter.ProvidePresenter;
 import com.matsyuk.wizardcase.R;
 import com.matsyuk.wizardcase.common.ui.BackButtonListener;
+import com.matsyuk.wizardcase.di.ComponentManager;
 import com.matsyuk.wizardcase.presentation.info.presenters.InfoPresenter;
 import com.matsyuk.wizardcase.presentation.info.wizard_part.InfoWizardPart;
 
@@ -35,6 +36,12 @@ public class InfoFragment extends MvpAppCompatFragment implements InfoView, Back
     InfoPresenter infoPresenter;
 
     private TextView infoText;
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        ComponentManager.getInstance().getMainComponent().inject(this);
+        super.onCreate(savedInstanceState);
+    }
 
     @Nullable
     @Override

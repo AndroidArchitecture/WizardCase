@@ -1,6 +1,7 @@
 package com.matsyuk.wizardcase.di;
 
 import com.matsyuk.wizardcase.di.app.AppComponent;
+import com.matsyuk.wizardcase.di.app.DaggerAppComponent;
 import com.matsyuk.wizardcase.di.wizard.WizardComponent;
 
 /**
@@ -41,6 +42,10 @@ public class ComponentManager {
                     .build();
         }
         return wizardComponent;
+    }
+
+    public void clearWizardComponent() {
+        wizardComponent = null;
     }
 
 }

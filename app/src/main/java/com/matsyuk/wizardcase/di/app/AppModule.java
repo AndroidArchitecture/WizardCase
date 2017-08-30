@@ -1,7 +1,7 @@
 package com.matsyuk.wizardcase.di.app;
 
-import com.matsyuk.mobiusclean.clean.business.auth.AuthInteractorFake;
-import com.matsyuk.mobiusclean.clean.business.auth.IAuthInteractor;
+import com.matsyuk.wizardcase.business.auth.AuthInteractor;
+import com.matsyuk.wizardcase.business.auth.AuthInteractorFake;
 
 import javax.inject.Singleton;
 
@@ -16,7 +16,7 @@ public class AppModule {
 
     @Singleton
     @Provides
-    public IAuthInteractor provideAuthInteractor() {
+    public AuthInteractor provideAuthInteractor() {
         return new AuthInteractorFake();
     }
 

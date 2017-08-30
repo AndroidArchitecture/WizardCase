@@ -18,14 +18,14 @@ public class WizardNavigationModule {
         cicerone = Cicerone.create();
     }
 
-    @Provides
     @WizardScope
+    @Provides
     Router provideRouter() {
         return cicerone.getRouter();
     }
 
-    @Provides
     @WizardScope
+    @Provides
     NavigatorHolder provideNavigatorHolder() {
         return cicerone.getNavigatorHolder();
     }

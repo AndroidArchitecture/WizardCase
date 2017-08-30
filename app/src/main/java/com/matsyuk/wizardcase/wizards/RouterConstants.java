@@ -3,10 +3,10 @@ package com.matsyuk.wizardcase.wizards;
 /**
  * @author e.matsyuk
  */
-class RouterConstants {
+public class RouterConstants {
 
-    static final String INFO_SCREEN = "StartScreen";
-    static final String LICENSE_SCREEN = "LicenseScreen";
-    static final String ACTIVATION_SCREEN = "ActivationScreen";
+    public static final String INFO_SCREEN = "StartScreen";
+    public static final String LICENSE_SCREEN = "LicenseScreen";
+    public static final String ACTIVATION_SCREEN = "ActivationScreen";
 
 }

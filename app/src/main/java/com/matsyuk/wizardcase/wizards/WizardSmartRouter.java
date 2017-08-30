@@ -35,12 +35,8 @@ public class WizardSmartRouter implements InfoWizardPart, LicenseWizardPart, Act
 
     @Override
     public void infoWizardNext() {
-        if (currentWizardStep == START_INFO) {
-            currentWizardStep = LICENSE;
-            router.navigateTo(LICENSE_SCREEN);
-        } else if (currentWizardStep == FINISH_INFO) {
-            router.finishChain();
-        }
+        currentWizardStep = LICENSE;
+        router.navigateTo(LICENSE_SCREEN);
     }
 
     @Override
@@ -76,7 +72,8 @@ public class WizardSmartRouter implements InfoWizardPart, LicenseWizardPart, Act
 
     @Override
     public void activationLoginWizardSuccess() {
-
+        currentWizardStep = FINISH_INFO;
+        router.finishChain();
     }
 
     @Override

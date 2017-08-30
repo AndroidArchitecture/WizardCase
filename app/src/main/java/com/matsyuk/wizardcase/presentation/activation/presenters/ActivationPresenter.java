@@ -28,7 +28,8 @@ public class ActivationPresenter extends MvpPresenter<ActivationView> {
         this.authInteractor = authInteractor;
     }
 
-    public void unbindView() {
+    @Override
+    public void onDestroy() {
         compositeDisposable.clear();
     }
 

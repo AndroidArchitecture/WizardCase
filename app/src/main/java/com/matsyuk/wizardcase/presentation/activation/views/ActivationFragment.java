@@ -17,6 +17,7 @@ import com.jakewharton.rxbinding2.widget.RxTextView;
 import com.matsyuk.wizardcase.R;
 import com.matsyuk.wizardcase.business.auth.AuthInteractor;
 import com.matsyuk.wizardcase.common.ui.BackButtonListener;
+import com.matsyuk.wizardcase.di.ComponentManager;
 import com.matsyuk.wizardcase.presentation.activation.presenters.ActivationPresenter;
 import com.matsyuk.wizardcase.presentation.activation.wizard_part.ActivationWizardPart;
 
@@ -25,7 +26,7 @@ import javax.inject.Inject;
 /**
  * @author e.matsyuk
  */
-public abstract class ActivationFragment extends MvpAppCompatFragment implements ActivationView, BackButtonListener {
+public class ActivationFragment extends MvpAppCompatFragment implements ActivationView, BackButtonListener {
 
     @Inject
     ActivationWizardPart activationWizardPart;
@@ -45,6 +46,12 @@ public abstract class ActivationFragment extends MvpAppCompatFragment implements
     private EditText loginInput;
     private EditText passwordInput;
     private ProgressBar progressBar;
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        ComponentManager.getInstance().getMainComponent().inject(this);
+        super.onCreate(savedInstanceState);
+    }
 
     @Nullable
     @Override
@@ -78,12 +85,6 @@ public abstract class ActivationFragment extends MvpAppCompatFragment implements
     public boolean onBackPressed() {
         activationPresenter.clickBack();
         return true;
-    }
-
-    @Override
-    public void onDestroyView() {
-        activationPresenter.unbindView();
-        super.onDestroyView();
     }
 
     @Override

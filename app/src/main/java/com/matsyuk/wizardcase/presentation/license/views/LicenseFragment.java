@@ -14,6 +14,7 @@ import com.arellomobile.mvp.presenter.ProvidePresenter;
 import com.matsyuk.wizardcase.R;
 import com.matsyuk.wizardcase.business.first_wizard.FirstWizardInteractor;
 import com.matsyuk.wizardcase.common.ui.BackButtonListener;
+import com.matsyuk.wizardcase.di.ComponentManager;
 import com.matsyuk.wizardcase.presentation.license.presenters.LicensePresenter;
 import com.matsyuk.wizardcase.presentation.license.wizard_part.LicenseWizardPart;
 
@@ -39,6 +40,12 @@ public class LicenseFragment extends MvpAppCompatFragment implements LicenseView
     LicensePresenter licensePresenter;
 
     private ProgressBar progressBar;
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        ComponentManager.getInstance().getMainComponent().inject(this);
+        super.onCreate(savedInstanceState);
+    }
 
     @Nullable
     @Override

@@ -29,6 +29,7 @@ public class LicensePresenter extends MvpPresenter<LicenseView> {
         if (disposable != null && !disposable.isDisposed()) {
             return;
         }
+        getViewState().showProgress();
         disposable = firstWizardInteractor.acceptLicense()
                 .doOnSubscribe(disposable -> getViewState().showProgress())
                 .observeOn(AndroidSchedulers.mainThread())
