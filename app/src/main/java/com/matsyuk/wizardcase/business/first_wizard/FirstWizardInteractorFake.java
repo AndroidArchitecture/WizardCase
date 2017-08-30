@@ -7,7 +7,7 @@ import io.reactivex.Single;
 /**
  * @author e.matsyuk
  */
-public class FirstWizardInteractorImpl implements FirstWizardInteractor {
+public class FirstWizardInteractorFake implements FirstWizardInteractor {
 
     @Override
     public Single<Boolean> acceptLicense() {

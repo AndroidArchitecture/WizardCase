@@ -44,11 +44,11 @@ public class LicenseFragment extends MvpAppCompatFragment implements LicenseView
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fmt_license, container, false);
-
+        //
         Button nextButton = (Button) view.findViewById(R.id.btn_next);
         nextButton.setOnClickListener(v -> licensePresenter.acceptLicense());
         progressBar = (ProgressBar) view.findViewById(R.id.progress);
-
+        //
         return view;
     }
 

@@ -40,10 +40,11 @@ public class InfoFragment extends MvpAppCompatFragment implements InfoView, Back
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fmt_info, container, false);
+        //
         infoText = (TextView)view.findViewById(R.id.info_text);
         Button nextButton = (Button) view.findViewById(R.id.btn_next);
         nextButton.setOnClickListener(v -> infoPresenter.clickNext());
-
+        //
         return view;
     }
 
