@@ -6,6 +6,11 @@ import com.matsyuk.wizardcase.business.first_wizard.FirstWizardInteractor;
 import com.matsyuk.wizardcase.presentation.license.views.LicenseView;
 import com.matsyuk.wizardcase.presentation.license.wizard_part.LicenseWizardPart;
 
+import org.reactivestreams.Subscription;
+
+import java.util.concurrent.TimeUnit;
+
+import io.reactivex.Observable;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
 
@@ -29,7 +34,6 @@ public class LicensePresenter extends MvpPresenter<LicenseView> {
         if (disposable != null && !disposable.isDisposed()) {
             return;
         }
-        getViewState().showProgress();
         disposable = firstWizardInteractor.acceptLicense()
                 .doOnSubscribe(disposable -> getViewState().showProgress())
                 .observeOn(AndroidSchedulers.mainThread())

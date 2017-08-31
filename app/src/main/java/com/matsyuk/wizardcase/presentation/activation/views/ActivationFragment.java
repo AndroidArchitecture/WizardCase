@@ -98,6 +98,11 @@ public class ActivationFragment extends MvpAppCompatFragment implements Activati
     }
 
     @Override
+    public void showFreeLogin() {
+        Toast.makeText(getContext(), getString(R.string.fmt_account_login_auth_free), Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
     public void showProgress(boolean show) {
         progressBar.setVisibility(show ? View.VISIBLE : View.GONE);
     }

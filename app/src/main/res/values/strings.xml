@@ -35,6 +35,7 @@
     <string name="fmt_account_login_btn_new_account">New account</string>
     <string name="fmt_account_login_auth_success">Success login</string>
     <string name="fmt_account_login_auth_error">Error login</string>
+    <string name="fmt_account_login_auth_free">Free enter</string>
 
     <string name="fmt_account_registration_name">Account Registration</string>
     <string name="fmt_account_registration_et_mail_hint">Enter your mail</string>

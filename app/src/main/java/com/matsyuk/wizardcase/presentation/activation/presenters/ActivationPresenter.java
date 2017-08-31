@@ -64,6 +64,7 @@ public class ActivationPresenter extends MvpPresenter<ActivationView> {
     }
 
     public void clickFreeVersion() {
+        getViewState().showFreeLogin();
         activationWizardPart.activationWizardFreeNext();
     }
 
