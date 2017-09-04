@@ -5,8 +5,8 @@ package com.matsyuk.wizardcase.presentation.activation.wizard_part;
  */
 public interface ActivationWizardPart {
 
-    void activationLoginWizardSuccess();
-    void activationWizardBack();
+    void activationWizardPersonalAccountNext();
     void activationWizardFreeNext();
+    void activationWizardBack();
 
 }

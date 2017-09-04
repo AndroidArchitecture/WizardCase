@@ -31,21 +31,13 @@ public class ActivationFragment extends MvpAppCompatFragment implements Activati
     @Inject
     ActivationWizardPart activationWizardPart;
 
-    @Inject
-    AuthInteractor authInteractor;
-
     @ProvidePresenter
     ActivationPresenter provideActivationPresenter() {
-        return new ActivationPresenter(activationWizardPart, authInteractor);
+        return new ActivationPresenter(activationWizardPart);
     }
 
     @InjectPresenter
     ActivationPresenter activationPresenter;
-
-    private Button loginButton;
-    private EditText loginInput;
-    private EditText passwordInput;
-    private ProgressBar progressBar;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -58,13 +50,8 @@ public class ActivationFragment extends MvpAppCompatFragment implements Activati
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fmt_activation, container, false);
         //
-        progressBar = (ProgressBar)view.findViewById(R.id.progress);
-        //
-        loginInput = (EditText)view.findViewById(R.id.et_mail);
-        passwordInput = (EditText)view.findViewById(R.id.et_password);
-        //
-        loginButton = (Button)view.findViewById(R.id.btn_login);
-        loginButton.setOnClickListener(v -> activationPresenter.clickLogin(loginInput.getText().toString(), passwordInput.getText().toString()));
+        Button personalAccountButton = (Button)view.findViewById(R.id.btn_personal_account);
+        personalAccountButton.setOnClickListener(v -> activationPresenter.clickPersonalAccount());
         //
         Button freeButton = (Button)view.findViewById(R.id.btn_free);
         freeButton.setOnClickListener(v -> activationPresenter.clickFreeVersion());
@@ -73,43 +60,9 @@ public class ActivationFragment extends MvpAppCompatFragment implements Activati
     }
 
     @Override
-    public void onResume() {
-        super.onResume();
-        activationPresenter.inputData(
-                RxTextView.textChanges(loginInput).map(CharSequence::toString),
-                RxTextView.textChanges(passwordInput).map(CharSequence::toString)
-        );
-    }
-
-    @Override
     public boolean onBackPressed() {
         activationPresenter.clickBack();
         return true;
-    }
-
-    @Override
-    public void showSuccessLogin() {
-        Toast.makeText(getContext(), getString(R.string.fmt_account_login_auth_success), Toast.LENGTH_SHORT).show();
-    }
-
-    @Override
-    public void showErrorLogin() {
-        Toast.makeText(getContext(), getString(R.string.fmt_account_login_auth_error), Toast.LENGTH_SHORT).show();
-    }
-
-    @Override
-    public void showFreeLogin() {
-        Toast.makeText(getContext(), getString(R.string.fmt_account_login_auth_free), Toast.LENGTH_SHORT).show();
-    }
-
-    @Override
-    public void showProgress(boolean show) {
-        progressBar.setVisibility(show ? View.VISIBLE : View.GONE);
-    }
-
-    @Override
-    public void loginEnabled(boolean enable) {
-        loginButton.setEnabled(enable);
     }
 
 }

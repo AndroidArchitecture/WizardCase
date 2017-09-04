@@ -7,10 +7,4 @@ import com.arellomobile.mvp.MvpView;
  */
 public interface ActivationView extends MvpView {
 
-    void showSuccessLogin();
-    void showErrorLogin();
-    void showFreeLogin();
-    void showProgress(boolean show);
-    void loginEnabled(boolean enable);
-
 }

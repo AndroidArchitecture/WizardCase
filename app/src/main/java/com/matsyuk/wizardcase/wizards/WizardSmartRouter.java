@@ -51,13 +51,13 @@ public class WizardSmartRouter {
     private final ActivationWizardPart activationWizardPart = new ActivationWizardPart() {
 
         @Override
-        public void activationWizardFreeNext() {
-            currentWizardStep = FINISH_INFO;
-            router.navigateTo(INFO_FINISH_SCREEN);
+        public void activationWizardPersonalAccountNext() {
+//            currentWizardStep = FINISH_INFO;
+//            router.navigateTo(INFO_FINISH_SCREEN);
         }
 
         @Override
-        public void activationLoginWizardSuccess() {
+        public void activationWizardFreeNext() {
             currentWizardStep = FINISH_INFO;
             router.navigateTo(INFO_FINISH_SCREEN);
         }
