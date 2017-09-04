@@ -22,26 +22,9 @@ import javax.inject.Inject;
 /**
  * @author e.matsyuk
  */
-public class InfoFragment extends MvpAppCompatFragment implements InfoView, BackButtonListener {
-
-    @Inject
-    InfoWizardPart infoWizardPart;
-
-    @ProvidePresenter
-    InfoPresenter provideInfoPresenter() {
-        return new InfoPresenter(infoWizardPart, TextType.START);
-    }
-
-    @InjectPresenter
-    InfoPresenter infoPresenter;
+public abstract class InfoFragment extends MvpAppCompatFragment implements InfoView, BackButtonListener {
 
     private TextView infoText;
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        ComponentManager.getInstance().getMainComponent().inject(this);
-        super.onCreate(savedInstanceState);
-    }
 
     @Nullable
     @Override
@@ -50,7 +33,7 @@ public class InfoFragment extends MvpAppCompatFragment implements InfoView, Back
         //
         infoText = (TextView)view.findViewById(R.id.info_text);
         Button nextButton = (Button) view.findViewById(R.id.btn_next);
-        nextButton.setOnClickListener(v -> infoPresenter.clickNext());
+        nextButton.setOnClickListener(v -> getPresenter().clickNext());
         //
         return view;
     }
@@ -69,8 +52,10 @@ public class InfoFragment extends MvpAppCompatFragment implements InfoView, Back
 
     @Override
     public boolean onBackPressed() {
-        infoPresenter.clickBack();
+        getPresenter().clickBack();
         return true;
     }
+
+    protected abstract InfoPresenter getPresenter();
 
 }

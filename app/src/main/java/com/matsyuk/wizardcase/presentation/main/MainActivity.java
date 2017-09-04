@@ -8,7 +8,8 @@ import com.matsyuk.wizardcase.R;
 import com.matsyuk.wizardcase.common.ui.BackButtonListener;
 import com.matsyuk.wizardcase.di.ComponentManager;
 import com.matsyuk.wizardcase.presentation.activation.views.ActivationFragment;
-import com.matsyuk.wizardcase.presentation.info.views.InfoFragment;
+import com.matsyuk.wizardcase.presentation.info.views.InfoFinishFragment;
+import com.matsyuk.wizardcase.presentation.info.views.InfoStartFragment;
 import com.matsyuk.wizardcase.presentation.license.views.LicenseFragment;
 import com.matsyuk.wizardcase.wizards.WizardSmartRouter;
 
@@ -32,12 +33,14 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         protected Fragment createFragment(String screenKey, Object data) {
-            if (screenKey.equals(INFO_SCREEN)) {
-                return new InfoFragment();
+            if (screenKey.equals(INFO_START_SCREEN)) {
+                return new InfoStartFragment();
             } else if (screenKey.equals(LICENSE_SCREEN)) {
                 return new LicenseFragment();
             } else if (screenKey.equals(ACTIVATION_SCREEN)) {
                 return new ActivationFragment();
+            } else if (screenKey.equals(INFO_FINISH_SCREEN)) {
+                return new InfoFinishFragment();
             }
             return null;
         }

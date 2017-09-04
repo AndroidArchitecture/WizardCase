@@ -7,10 +7,13 @@ import com.matsyuk.wizardcase.presentation.info.wizard_part.InfoWizardPart;
 import com.matsyuk.wizardcase.presentation.license.wizard_part.LicenseWizardPart;
 import com.matsyuk.wizardcase.wizards.WizardSmartRouter;
 
-import dagger.Lazy;
+import javax.inject.Named;
+
 import dagger.Module;
 import dagger.Provides;
 import ru.terrakok.cicerone.Router;
+
+import static com.matsyuk.wizardcase.di.DiConstants.*;
 
 /**
  * @author e.matsyuk
@@ -44,20 +47,28 @@ public class WizardModule {
 
     @WizardScope
     @Provides
-    InfoWizardPart provideIInfoWizardPartStart(WizardSmartRouter wizardSmartRouter) {
-        return wizardSmartRouter.getInfoWizardPart();
+    @Named(INFO_START_ANNOTATION)
+    InfoWizardPart provideInfoStartWizardPartStart(WizardSmartRouter wizardSmartRouter) {
+        return wizardSmartRouter.getInfoStartWizardPart();
     }
 
     @WizardScope
     @Provides
-    LicenseWizardPart provideILicenseWizardPart(WizardSmartRouter wizardSmartRouter) {
+    LicenseWizardPart provideLicenseWizardPart(WizardSmartRouter wizardSmartRouter) {
         return wizardSmartRouter.getLicenseWizardPart();
     }
 
     @WizardScope
     @Provides
-    ActivationWizardPart provideIActivationWizardPart(WizardSmartRouter wizardSmartRouter) {
+    ActivationWizardPart provideActivationWizardPart(WizardSmartRouter wizardSmartRouter) {
         return wizardSmartRouter.getActivationWizardPart();
+    }
+
+    @WizardScope
+    @Provides
+    @Named(INFO_FINISH_ANNOTATION)
+    InfoWizardPart provideInfoFinishWizardPartStart(WizardSmartRouter wizardSmartRouter) {
+        return wizardSmartRouter.getInfoFinishWizardPart();
     }
 
 }

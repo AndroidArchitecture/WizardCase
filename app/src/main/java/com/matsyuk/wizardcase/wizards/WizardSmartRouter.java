@@ -17,7 +17,7 @@ public class WizardSmartRouter {
     private final Router router;
     private WizardStep currentWizardStep = NONE;
 
-    private final InfoWizardPart infoWizardPart = new InfoWizardPart() {
+    private final InfoWizardPart infoStartWizardPart = new InfoWizardPart() {
 
         @Override
         public void infoWizardNext() {
@@ -43,7 +43,7 @@ public class WizardSmartRouter {
         @Override
         public void licenseWizardBack() {
             currentWizardStep = WizardStep.START_INFO;
-            router.backTo(INFO_SCREEN);
+            router.backTo(INFO_START_SCREEN);
         }
 
     };
@@ -53,19 +53,33 @@ public class WizardSmartRouter {
         @Override
         public void activationWizardFreeNext() {
             currentWizardStep = FINISH_INFO;
-            router.finishChain();
+            router.navigateTo(INFO_FINISH_SCREEN);
         }
 
         @Override
         public void activationLoginWizardSuccess() {
             currentWizardStep = FINISH_INFO;
-            router.finishChain();
+            router.navigateTo(INFO_FINISH_SCREEN);
         }
 
         @Override
         public void activationWizardBack() {
             currentWizardStep = WizardStep.LICENSE;
-            router.backTo(LICENSE_SCREEN);
+            router.navigateTo(INFO_FINISH_SCREEN);
+        }
+
+    };
+
+    private final InfoWizardPart infoFinishWizardPart = new InfoWizardPart() {
+
+        @Override
+        public void infoWizardNext() {
+            router.finishChain();
+        }
+
+        @Override
+        public void infoWizardBack() {
+            router.finishChain();
         }
 
     };
@@ -79,11 +93,11 @@ public class WizardSmartRouter {
             return;
         }
         currentWizardStep = START_INFO;
-        router.navigateTo(INFO_SCREEN);
+        router.navigateTo(INFO_START_SCREEN);
     }
 
-    public InfoWizardPart getInfoWizardPart() {
-        return infoWizardPart;
+    public InfoWizardPart getInfoStartWizardPart() {
+        return infoStartWizardPart;
     }
 
     public LicenseWizardPart getLicenseWizardPart() {
@@ -92,6 +106,10 @@ public class WizardSmartRouter {
 
     public ActivationWizardPart getActivationWizardPart() {
         return activationWizardPart;
+    }
+
+    public InfoWizardPart getInfoFinishWizardPart() {
+        return infoFinishWizardPart;
     }
 
 }

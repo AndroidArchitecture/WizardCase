@@ -1,7 +1,9 @@
 package com.matsyuk.wizardcase.di.wizard;
 
 import com.matsyuk.wizardcase.presentation.activation.views.ActivationFragment;
+import com.matsyuk.wizardcase.presentation.info.views.InfoFinishFragment;
 import com.matsyuk.wizardcase.presentation.info.views.InfoFragment;
+import com.matsyuk.wizardcase.presentation.info.views.InfoStartFragment;
 import com.matsyuk.wizardcase.presentation.license.views.LicenseFragment;
 import com.matsyuk.wizardcase.presentation.main.MainActivity;
 
@@ -20,7 +22,8 @@ public interface WizardComponent {
     }
 
     void inject(MainActivity mainActivity);
-    void inject(InfoFragment infoFragment);
+    void inject(InfoStartFragment infoStartFragment);
+    void inject(InfoFinishFragment infoFinishFragment);
     void inject(LicenseFragment licenseFragment);
     void inject(ActivationFragment activationFragment);
 
