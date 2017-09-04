@@ -44,19 +44,19 @@ public class WizardModule {
 
     @WizardScope
     @Provides
-    InfoWizardPart provideIInfoWizardPartStart(WizardSmartRouter wizardSmartRouter) {
+    InfoWizardPart provideInfoWizardPartStart(WizardSmartRouter wizardSmartRouter) {
         return wizardSmartRouter.getInfoWizardPart();
     }
 
     @WizardScope
     @Provides
-    LicenseWizardPart provideILicenseWizardPart(WizardSmartRouter wizardSmartRouter) {
+    LicenseWizardPart provideLicenseWizardPart(WizardSmartRouter wizardSmartRouter) {
         return wizardSmartRouter.getLicenseWizardPart();
     }
 
     @WizardScope
     @Provides
-    ActivationWizardPart provideIActivationWizardPart(WizardSmartRouter wizardSmartRouter) {
+    ActivationWizardPart provideActivationWizardPart(WizardSmartRouter wizardSmartRouter) {
         return wizardSmartRouter.getActivationWizardPart();
     }
 
