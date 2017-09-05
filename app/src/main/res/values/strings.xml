@@ -47,5 +47,5 @@
     <string name="fmt_account_registration_auth_success">Success registration</string>
     <string name="fmt_account_registration_auth_error">Error registration</string>
 
-    <string name="ac_login_wizard_title">Login</string>
+    <string name="ac_account_wizard_title">Login</string>
 </resources>

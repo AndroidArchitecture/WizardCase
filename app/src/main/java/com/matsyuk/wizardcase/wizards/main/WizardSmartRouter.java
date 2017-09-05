@@ -1,4 +1,4 @@
-package com.matsyuk.wizardcase.wizards;
+package com.matsyuk.wizardcase.wizards.main;
 
 import com.matsyuk.wizardcase.presentation.activation.wizard_part.ActivationWizardPart;
 import com.matsyuk.wizardcase.presentation.info.wizard_part.InfoWizardPart;
@@ -6,7 +6,6 @@ import com.matsyuk.wizardcase.presentation.license.wizard_part.LicenseWizardPart
 
 import ru.terrakok.cicerone.Router;
 
-import static com.matsyuk.wizardcase.wizards.WizardStep.*;
 import static com.matsyuk.wizardcase.wizards.RouterConstants.*;
 
 /**
@@ -15,13 +14,13 @@ import static com.matsyuk.wizardcase.wizards.RouterConstants.*;
 public class WizardSmartRouter {
 
     private final Router router;
-    private WizardStep currentWizardStep = NONE;
+    private WizardStep currentWizardStep = WizardStep.NONE;
 
     private final InfoWizardPart infoStartWizardPart = new InfoWizardPart() {
 
         @Override
         public void infoWizardNext() {
-            currentWizardStep = LICENSE;
+            currentWizardStep = WizardStep.LICENSE;
             router.navigateTo(LICENSE_SCREEN);
         }
 
@@ -36,7 +35,7 @@ public class WizardSmartRouter {
 
         @Override
         public void licenseWizardAccept() {
-            currentWizardStep = ACTIVATION;
+            currentWizardStep = WizardStep.ACTIVATION;
             router.navigateTo(ACTIVATION_SCREEN);
         }
 
@@ -58,7 +57,7 @@ public class WizardSmartRouter {
 
         @Override
         public void activationWizardFreeNext() {
-            currentWizardStep = FINISH_INFO;
+            currentWizardStep = WizardStep.FINISH_INFO;
             router.navigateTo(INFO_FINISH_SCREEN);
         }
 
@@ -89,10 +88,10 @@ public class WizardSmartRouter {
     }
 
     public void startWizard() {
-        if (currentWizardStep != NONE) {
+        if (currentWizardStep != WizardStep.NONE) {
             return;
         }
-        currentWizardStep = START_INFO;
+        currentWizardStep = WizardStep.START_INFO;
         router.navigateTo(INFO_START_SCREEN);
     }
 

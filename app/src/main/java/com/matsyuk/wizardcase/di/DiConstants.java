@@ -7,5 +7,6 @@ public class DiConstants {
 
     public static final String INFO_START_ANNOTATION = "info_start";
     public static final String INFO_FINISH_ANNOTATION = "info_finish";
+    public static final String INFO_ACTIVATION_ANNOTATION = "info_activation";
 
 }

@@ -1,8 +1,7 @@
-package com.matsyuk.wizardcase.di.wizard;
+package com.matsyuk.wizardcase.di.main_wizard;
 
 import com.matsyuk.wizardcase.presentation.activation.views.ActivationFragment;
 import com.matsyuk.wizardcase.presentation.info.views.InfoFinishFragment;
-import com.matsyuk.wizardcase.presentation.info.views.InfoFragment;
 import com.matsyuk.wizardcase.presentation.info.views.InfoStartFragment;
 import com.matsyuk.wizardcase.presentation.license.views.LicenseFragment;
 import com.matsyuk.wizardcase.presentation.main.MainActivity;

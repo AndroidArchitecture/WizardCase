@@ -1,4 +1,4 @@
-package com.matsyuk.wizardcase.di.wizard;
+package com.matsyuk.wizardcase.di.main_wizard;
 
 import java.lang.annotation.Documented;
 import java.lang.annotation.Retention;

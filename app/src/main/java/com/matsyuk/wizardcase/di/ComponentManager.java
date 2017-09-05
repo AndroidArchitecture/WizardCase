@@ -2,7 +2,7 @@ package com.matsyuk.wizardcase.di;
 
 import com.matsyuk.wizardcase.di.app.AppComponent;
 import com.matsyuk.wizardcase.di.app.DaggerAppComponent;
-import com.matsyuk.wizardcase.di.wizard.WizardComponent;
+import com.matsyuk.wizardcase.di.main_wizard.WizardComponent;
 
 /**
  * @author e.matsyuk

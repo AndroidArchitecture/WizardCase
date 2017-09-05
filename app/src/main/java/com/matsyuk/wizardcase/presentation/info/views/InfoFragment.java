@@ -9,15 +9,9 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.arellomobile.mvp.MvpAppCompatFragment;
-import com.arellomobile.mvp.presenter.InjectPresenter;
-import com.arellomobile.mvp.presenter.ProvidePresenter;
 import com.matsyuk.wizardcase.R;
 import com.matsyuk.wizardcase.common.ui.BackButtonListener;
-import com.matsyuk.wizardcase.di.ComponentManager;
 import com.matsyuk.wizardcase.presentation.info.presenters.InfoPresenter;
-import com.matsyuk.wizardcase.presentation.info.wizard_part.InfoWizardPart;
-
-import javax.inject.Inject;
 
 /**
  * @author e.matsyuk
@@ -44,7 +38,7 @@ public abstract class InfoFragment extends MvpAppCompatFragment implements InfoV
             infoText.setText(getString(R.string.fmt_info_text_start));
         } else if (textType == TextType.FINISH) {
             infoText.setText(getString(R.string.fmt_info_text_finish));
-        } else if (textType == TextType.LOGIN) {
+        } else if (textType == TextType.ACTIVATION) {
             infoText.setText(getString(R.string.fmt_info_text_login));
         }
 

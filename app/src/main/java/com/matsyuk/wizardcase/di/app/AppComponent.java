@@ -1,6 +1,6 @@
 package com.matsyuk.wizardcase.di.app;
 
-import com.matsyuk.wizardcase.di.wizard.WizardComponent;
+import com.matsyuk.wizardcase.di.main_wizard.WizardComponent;
 
 import javax.inject.Singleton;
 

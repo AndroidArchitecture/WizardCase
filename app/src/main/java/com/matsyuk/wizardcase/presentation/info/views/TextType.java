@@ -6,5 +6,5 @@ package com.matsyuk.wizardcase.presentation.info.views;
 public enum TextType {
     START,
     FINISH,
-    LOGIN
+    ACTIVATION
 }
