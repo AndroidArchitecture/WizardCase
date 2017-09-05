@@ -32,7 +32,7 @@ public class InfoStartFragment extends InfoFragment {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
-        ComponentManager.getInstance().getMainComponent().inject(this);
+        ComponentManager.getInstance().getWizardComponent().inject(this);
         super.onCreate(savedInstanceState);
     }
 

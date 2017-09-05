@@ -1,5 +1,6 @@
 package com.matsyuk.wizardcase.di;
 
+import com.matsyuk.wizardcase.di.account_wizard.AccountWizardComponent;
 import com.matsyuk.wizardcase.di.app.AppComponent;
 import com.matsyuk.wizardcase.di.app.DaggerAppComponent;
 import com.matsyuk.wizardcase.di.main_wizard.WizardComponent;
@@ -13,6 +14,7 @@ public class ComponentManager {
 
     private AppComponent appComponent;
     private WizardComponent wizardComponent;
+    private AccountWizardComponent accountWizardComponent;
 
     public static ComponentManager getInstance() {
         if (instance == null) {
@@ -27,6 +29,10 @@ public class ComponentManager {
 
     private ComponentManager() {}
 
+    /**
+     * AppComponent
+     */
+
     public void initAppComponent() {
         appComponent = DaggerAppComponent.builder().build();
     }
@@ -35,7 +41,11 @@ public class ComponentManager {
         return appComponent;
     }
 
-    public WizardComponent getMainComponent() {
+    /**
+     * WizardComponent
+     */
+
+    public WizardComponent getWizardComponent() {
         if (wizardComponent == null) {
             wizardComponent = getAppComponent()
                     .wizardComponentBuilder()
@@ -46,6 +56,23 @@ public class ComponentManager {
 
     public void clearWizardComponent() {
         wizardComponent = null;
+    }
+
+    /**
+     * AccountWizardComponent
+     */
+
+    public AccountWizardComponent getAccountWizardComponent() {
+        if (accountWizardComponent == null) {
+            accountWizardComponent = getWizardComponent()
+                    .accoutWizardComponentBuilder()
+                    .build();
+        }
+        return accountWizardComponent;
+    }
+
+    public void clearAccountWizardComponent() {
+        accountWizardComponent = null;
     }
 
 }

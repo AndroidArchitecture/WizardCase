@@ -19,6 +19,7 @@ import ru.terrakok.cicerone.Navigator;
 import ru.terrakok.cicerone.NavigatorHolder;
 import ru.terrakok.cicerone.android.SupportFragmentNavigator;
 
+import static com.matsyuk.wizardcase.di.DiConstants.ACCOUNT_WIZARD_ANNOTATION;
 import static com.matsyuk.wizardcase.wizards.RouterConstants.*;
 
 /**
@@ -27,7 +28,7 @@ import static com.matsyuk.wizardcase.wizards.RouterConstants.*;
 public class AccountActivity extends AppCompatActivity {
 
     @Inject
-    @Named(LOGIN_NAMED_ANNOTATION)
+    @Named(ACCOUNT_WIZARD_ANNOTATION)
     NavigatorHolder navigatorHolder;
 
     @Inject
@@ -60,7 +61,7 @@ public class AccountActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        ComponentManager.getInstance().getFirstComponent().inject(this);
+        ComponentManager.getInstance().getAccountWizardComponent().inject(this);
         setContentView(R.layout.ac_account);
         setTitle(getString(R.string.ac_account_wizard_title));
     }
@@ -78,21 +79,29 @@ public class AccountActivity extends AppCompatActivity {
                 && fragment instanceof BackButtonListener
                 && ((BackButtonListener) fragment).onBackPressed()) {
             return;
-        } else {
-            super.onBackPressed();
         }
+        super.onBackPressed();
     }
 
     @Override
     public void onResume() {
         super.onResume();
         navigatorHolder.setNavigator(navigator);
+        accountWizardSmartRouter.startWizard();
     }
 
     @Override
     public void onPause() {
         navigatorHolder.removeNavigator();
         super.onPause();
+    }
+
+    @Override
+    public void onDestroy() {
+        if (isFinishing()) {
+            ComponentManager.getInstance().clearAccountWizardComponent();
+        }
+        super.onDestroy();
     }
 
 }

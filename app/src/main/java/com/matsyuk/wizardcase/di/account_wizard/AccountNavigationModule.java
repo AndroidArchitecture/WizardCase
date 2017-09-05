@@ -1,4 +1,4 @@
-package com.matsyuk.wizardcase.di.main_wizard;
+package com.matsyuk.wizardcase.di.account_wizard;
 
 import javax.inject.Named;
 
@@ -14,24 +14,24 @@ import static com.matsyuk.wizardcase.di.DiConstants.*;
  * @author e.matsyuk
  */
 @Module
-public class WizardNavigationModule {
+public class AccountNavigationModule {
 
     private Cicerone<Router> cicerone;
 
-    public WizardNavigationModule() {
+    public AccountNavigationModule() {
         cicerone = Cicerone.create();
     }
 
-    @WizardScope
     @Provides
-    @Named(MAIN_WIZARD_ANNOTATION)
+    @AccountWizardScope
+    @Named(ACCOUNT_WIZARD_ANNOTATION)
     Router provideRouter() {
         return cicerone.getRouter();
     }
 
-    @WizardScope
     @Provides
-    @Named(MAIN_WIZARD_ANNOTATION)
+    @AccountWizardScope
+    @Named(ACCOUNT_WIZARD_ANNOTATION)
     NavigatorHolder provideNavigatorHolder() {
         return cicerone.getNavigatorHolder();
     }

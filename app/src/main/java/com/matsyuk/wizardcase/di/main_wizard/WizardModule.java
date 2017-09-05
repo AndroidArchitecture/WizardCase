@@ -5,6 +5,7 @@ import com.matsyuk.wizardcase.business.first_wizard.FirstWizardInteractorFake;
 import com.matsyuk.wizardcase.presentation.activation.wizard_part.ActivationWizardPart;
 import com.matsyuk.wizardcase.presentation.info.wizard_part.InfoWizardPart;
 import com.matsyuk.wizardcase.presentation.license.wizard_part.LicenseWizardPart;
+import com.matsyuk.wizardcase.wizards.activation.AccountWizardResult;
 import com.matsyuk.wizardcase.wizards.main.WizardSmartRouter;
 
 import javax.inject.Named;
@@ -27,7 +28,7 @@ public class WizardModule {
 
     @WizardScope
     @Provides
-    WizardSmartRouter provideStartWizardManager(Router router) {
+    WizardSmartRouter provideStartWizardManager(@Named(MAIN_WIZARD_ANNOTATION) Router router) {
         return new WizardSmartRouter(router);
     }
 
@@ -69,6 +70,12 @@ public class WizardModule {
     @Named(INFO_FINISH_ANNOTATION)
     InfoWizardPart provideInfoFinishWizardPartStart(WizardSmartRouter wizardSmartRouter) {
         return wizardSmartRouter.getInfoFinishWizardPart();
+    }
+
+    @WizardScope
+    @Provides
+    AccountWizardResult provideAccountWizardResult(WizardSmartRouter wizardSmartRouter) {
+        return wizardSmartRouter.getAccountWizardResult();
     }
 
 }

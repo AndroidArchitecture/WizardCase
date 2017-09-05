@@ -3,6 +3,7 @@ package com.matsyuk.wizardcase.wizards.main;
 import com.matsyuk.wizardcase.presentation.activation.wizard_part.ActivationWizardPart;
 import com.matsyuk.wizardcase.presentation.info.wizard_part.InfoWizardPart;
 import com.matsyuk.wizardcase.presentation.license.wizard_part.LicenseWizardPart;
+import com.matsyuk.wizardcase.wizards.activation.AccountWizardResult;
 
 import ru.terrakok.cicerone.Router;
 
@@ -51,8 +52,7 @@ public class WizardSmartRouter {
 
         @Override
         public void activationWizardPersonalAccountNext() {
-//            currentWizardStep = FINISH_INFO;
-//            router.navigateTo(INFO_FINISH_SCREEN);
+            router.navigateTo(ACCOUNT_SCREEN);
         }
 
         @Override
@@ -65,6 +65,22 @@ public class WizardSmartRouter {
         public void activationWizardBack() {
             currentWizardStep = WizardStep.LICENSE;
             router.navigateTo(INFO_FINISH_SCREEN);
+        }
+
+    };
+
+    private final AccountWizardResult accountWizardResult = new AccountWizardResult() {
+
+        @Override
+        public void onSuccess() {
+            currentWizardStep = WizardStep.FINISH_INFO;
+            router.navigateTo(INFO_FINISH_SCREEN);
+        }
+
+        @Override
+        public void onBack() {
+            currentWizardStep = WizardStep.ACTIVATION;
+            router.backTo(ACTIVATION_SCREEN);
         }
 
     };
@@ -109,6 +125,10 @@ public class WizardSmartRouter {
 
     public InfoWizardPart getInfoFinishWizardPart() {
         return infoFinishWizardPart;
+    }
+
+    public AccountWizardResult getAccountWizardResult() {
+        return accountWizardResult;
     }
 
 }

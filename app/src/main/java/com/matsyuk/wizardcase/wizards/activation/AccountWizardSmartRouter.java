@@ -16,9 +16,9 @@ public class AccountWizardSmartRouter {
 
     private final Router router;
     private final AccountWizardResult accountWizardResult;
-    private AccountWizardStep accountWizardStep;
+    private AccountWizardStep accountWizardStep = NONE;
 
-    private final InfoWizardPart infoStartWizardPart = new InfoWizardPart() {
+    private final InfoWizardPart infoWizardPart = new InfoWizardPart() {
 
         @Override
         public void infoWizardNext() {
@@ -34,7 +34,7 @@ public class AccountWizardSmartRouter {
 
     };
 
-    private LoginWizardPart loginWizardPart = new LoginWizardPart() {
+    private final LoginWizardPart loginWizardPart = new LoginWizardPart() {
 
         @Override
         public void accountLoginWizardSuccess() {
@@ -58,7 +58,7 @@ public class AccountWizardSmartRouter {
 
     };
 
-    private RegistrationWizardPart registrationWizardPart = new RegistrationWizardPart() {
+    private final RegistrationWizardPart registrationWizardPart = new RegistrationWizardPart() {
 
         @Override
         public void accountRegistrationWizardSuccess() {
@@ -76,10 +76,8 @@ public class AccountWizardSmartRouter {
     };
 
     public AccountWizardSmartRouter(Router router,
-                                    AccountWizardStep accountWizardStep,
                                     AccountWizardResult accountWizardResult) {
         this.router = router;
-        this.accountWizardStep = accountWizardStep;
         this.accountWizardResult = accountWizardResult;
     }
 
@@ -91,8 +89,8 @@ public class AccountWizardSmartRouter {
         router.navigateTo(INFO_ACCOUNT_SCREEN);
     }
 
-    public InfoWizardPart getInfoStartWizardPart() {
-        return infoStartWizardPart;
+    public InfoWizardPart getInfoWizardPart() {
+        return infoWizardPart;
     }
 
     public LoginWizardPart getLoginWizardPart() {

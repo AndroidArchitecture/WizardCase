@@ -1,5 +1,7 @@
 package com.matsyuk.wizardcase.presentation.info.views;
 
+import android.os.Bundle;
+
 import com.arellomobile.mvp.presenter.InjectPresenter;
 import com.arellomobile.mvp.presenter.ProvidePresenter;
 import com.matsyuk.wizardcase.di.ComponentManager;
@@ -28,11 +30,11 @@ public class InfoAccountFragment extends InfoFragment {
     @InjectPresenter
     InfoPresenter infoPresenter;
 
-//    @Override
-//    public void onCreate(Bundle savedInstanceState) {
-//        ComponentManager.getInstance().getMainComponent().inject(this);
-//        super.onCreate(savedInstanceState);
-//    }
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        ComponentManager.getInstance().getAccountWizardComponent().inject(this);
+        super.onCreate(savedInstanceState);
+    }
 
     @Override
     protected InfoPresenter getPresenter() {

@@ -6,16 +6,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.ProgressBar;
-import android.widget.Toast;
 
 import com.arellomobile.mvp.MvpAppCompatFragment;
 import com.arellomobile.mvp.presenter.InjectPresenter;
 import com.arellomobile.mvp.presenter.ProvidePresenter;
-import com.jakewharton.rxbinding2.widget.RxTextView;
 import com.matsyuk.wizardcase.R;
-import com.matsyuk.wizardcase.business.auth.AuthInteractor;
 import com.matsyuk.wizardcase.common.ui.BackButtonListener;
 import com.matsyuk.wizardcase.di.ComponentManager;
 import com.matsyuk.wizardcase.presentation.activation.presenters.ActivationPresenter;
@@ -41,7 +36,7 @@ public class ActivationFragment extends MvpAppCompatFragment implements Activati
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
-        ComponentManager.getInstance().getMainComponent().inject(this);
+        ComponentManager.getInstance().getWizardComponent().inject(this);
         super.onCreate(savedInstanceState);
     }
 

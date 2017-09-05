@@ -1,5 +1,6 @@
 package com.matsyuk.wizardcase.di.main_wizard;
 
+import com.matsyuk.wizardcase.di.account_wizard.AccountWizardComponent;
 import com.matsyuk.wizardcase.presentation.activation.views.ActivationFragment;
 import com.matsyuk.wizardcase.presentation.info.views.InfoFinishFragment;
 import com.matsyuk.wizardcase.presentation.info.views.InfoStartFragment;
@@ -14,6 +15,8 @@ import dagger.Subcomponent;
 @WizardScope
 @Subcomponent(modules = {WizardModule.class, WizardNavigationModule.class})
 public interface WizardComponent {
+
+    AccountWizardComponent.Builder accoutWizardComponentBuilder();
 
     @Subcomponent.Builder
     interface Builder {

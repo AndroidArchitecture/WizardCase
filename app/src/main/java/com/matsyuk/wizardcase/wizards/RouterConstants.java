@@ -12,5 +12,6 @@ public class RouterConstants {
     public static final String LOGIN_SCREEN = "LoginScreen";
     public static final String INFO_ACCOUNT_SCREEN = "InfoAccountScreen";
     public static final String REGISTRATION_SCREEN = "RegistrationScreen";
+    public static final String ACCOUNT_SCREEN = "AccountScreen";
 
 }

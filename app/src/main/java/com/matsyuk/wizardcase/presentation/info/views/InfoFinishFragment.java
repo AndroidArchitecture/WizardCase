@@ -12,7 +12,6 @@ import javax.inject.Inject;
 import javax.inject.Named;
 
 import static com.matsyuk.wizardcase.di.DiConstants.INFO_FINISH_ANNOTATION;
-import static com.matsyuk.wizardcase.di.DiConstants.INFO_START_ANNOTATION;
 
 /**
  * @author e.matsyuk
@@ -33,7 +32,7 @@ public class InfoFinishFragment extends InfoFragment {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
-        ComponentManager.getInstance().getMainComponent().inject(this);
+        ComponentManager.getInstance().getWizardComponent().inject(this);
         super.onCreate(savedInstanceState);
     }
 

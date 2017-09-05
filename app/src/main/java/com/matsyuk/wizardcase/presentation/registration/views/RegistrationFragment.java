@@ -66,11 +66,11 @@ public class RegistrationFragment extends MvpAppCompatFragment implements Regist
         }
     };
 
-//    @Override
-//    public void onCreate(Bundle savedInstanceState) {
-//        ComponentManager.getInstance().getMainComponent().inject(this);
-//        super.onCreate(savedInstanceState);
-//    }
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        ComponentManager.getInstance().getAccountWizardComponent().inject(this);
+        super.onCreate(savedInstanceState);
+    }
 
     @Nullable
     @Override
