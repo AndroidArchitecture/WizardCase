@@ -13,7 +13,7 @@ public class AuthInteractorFake implements AuthInteractor {
 
     @Override
     public Single<Boolean> login(String login, String password) {
-        return Single.timer(1, TimeUnit.SECONDS)
+        return Single.timer(2, TimeUnit.SECONDS)
                 .map(aLong -> login.equals(TEST) && password.equals(TEST));
     }
 
