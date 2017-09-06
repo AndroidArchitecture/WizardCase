@@ -13,6 +13,7 @@ import java.util.concurrent.TimeUnit;
 import io.reactivex.Observable;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
+import io.reactivex.schedulers.Schedulers;
 
 /**
  * @author e.matsyuk
@@ -35,8 +36,9 @@ public class LicensePresenter extends MvpPresenter<LicenseView> {
             return;
         }
         disposable = firstWizardInteractor.acceptLicense()
-                .doOnSubscribe(disposable -> getViewState().showProgress())
+                .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
+                .doOnSubscribe(disposable -> getViewState().showProgress())
                 .subscribe(aBoolean -> {
                     getViewState().hideProgress();
                     licenseWizardPart.licenseWizardAccept();

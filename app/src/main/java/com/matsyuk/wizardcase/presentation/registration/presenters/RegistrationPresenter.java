@@ -38,8 +38,9 @@ public class RegistrationPresenter extends MvpPresenter<RegistrationView> {
             return;
         }
         Disposable disposable = authInteractor.registration(mail, password)
-                .observeOn(Schedulers.io())
+                .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
+                .doOnSubscribe(disposable1 -> getViewState().showProgress())
                 .subscribe(this::handleRegistrationResult, throwable -> {});
         compositeDisposable.add(disposable);
     }
@@ -49,6 +50,7 @@ public class RegistrationPresenter extends MvpPresenter<RegistrationView> {
     }
 
     private void handleRegistrationResult(boolean success) {
+        getViewState().hideProgress();
         if (success) {
             getViewState().showSuccess();
             registrationWizardPart.accountRegistrationWizardSuccess();

@@ -9,6 +9,7 @@ public interface LoginView extends MvpView {
 
     void showSuccessLogin();
     void showErrorLogin();
-    void showProgress(boolean show);
+    void showProgress();
+    void hideProgress();
     void loginEnabled(boolean enable);
 }

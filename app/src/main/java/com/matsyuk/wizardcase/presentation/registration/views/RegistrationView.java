@@ -7,7 +7,8 @@ import com.arellomobile.mvp.MvpView;
  */
 public interface RegistrationView extends MvpView {
 
-    void showProgress(boolean show);
+    void showProgress();
+    void hideProgress();
     void showErrorMail();
     void showPasswordError();
     void showAuthError();

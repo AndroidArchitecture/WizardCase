@@ -64,7 +64,7 @@ public class WizardSmartRouter {
         @Override
         public void activationWizardBack() {
             currentWizardStep = WizardStep.LICENSE;
-            router.navigateTo(INFO_FINISH_SCREEN);
+            router.backTo(LICENSE_SCREEN);
         }
 
     };

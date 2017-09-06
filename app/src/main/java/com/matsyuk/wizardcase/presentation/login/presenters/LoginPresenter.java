@@ -31,15 +31,15 @@ public class LoginPresenter extends MvpPresenter<LoginView> {
 
     public void clickLogin(String login, String password) {
         Disposable disposable = authInteractor.login(login, password)
-                .doOnSubscribe(disposable1 -> getViewState().showProgress(true))
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
+                .doOnSubscribe(disposable1 -> getViewState().showProgress())
                 .subscribe(this::handleResult, throwable -> {});
         compositeDisposable.add(disposable);
     }
 
     private void handleResult(boolean success) {
-        getViewState().showProgress(false);
+        getViewState().hideProgress();
         if (success) {
             getViewState().showSuccessLogin();
             loginWizardPart.accountLoginWizardSuccess();
