@@ -1,8 +1,8 @@
 package com.matsyuk.wizardcase.presentation.main;
 
+import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 
 import com.matsyuk.wizardcase.R;
 import com.matsyuk.wizardcase.common.ui.BackButtonListener;
@@ -19,7 +19,10 @@ import ru.terrakok.cicerone.Navigator;
 import ru.terrakok.cicerone.NavigatorHolder;
 import ru.terrakok.cicerone.android.SupportFragmentNavigator;
 
-import static com.matsyuk.wizardcase.wizards.RouterConstants.*;
+import static com.matsyuk.wizardcase.wizards.RouterConstants.ACTIVATION_SCREEN;
+import static com.matsyuk.wizardcase.wizards.RouterConstants.INFO_FINISH_SCREEN;
+import static com.matsyuk.wizardcase.wizards.RouterConstants.INFO_START_SCREEN;
+import static com.matsyuk.wizardcase.wizards.RouterConstants.LICENSE_SCREEN;
 
 public class MainActivity extends AppCompatActivity {
 

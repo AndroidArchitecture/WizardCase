@@ -12,7 +12,6 @@ import javax.inject.Inject;
 import javax.inject.Named;
 
 import static com.matsyuk.wizardcase.di.DiConstants.INFO_FINISH_ANNOTATION;
-import static com.matsyuk.wizardcase.di.DiConstants.INFO_START_ANNOTATION;
 
 /**
  * @author e.matsyuk

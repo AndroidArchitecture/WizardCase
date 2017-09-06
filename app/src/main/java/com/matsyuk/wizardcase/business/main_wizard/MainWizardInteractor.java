@@ -1,10 +1,10 @@
-package com.matsyuk.wizardcase.business.first_wizard;
+package com.matsyuk.wizardcase.business.main_wizard;
 
 import io.reactivex.Single;
 
 /**
  * @author e.matsyuk
  */
-public interface FirstWizardInteractor {
+public interface MainWizardInteractor {
     Single<Boolean> acceptLicense();
 }

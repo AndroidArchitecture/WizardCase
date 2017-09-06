@@ -2,15 +2,10 @@ package com.matsyuk.wizardcase.presentation.license.presenters;
 
 import com.arellomobile.mvp.InjectViewState;
 import com.arellomobile.mvp.MvpPresenter;
-import com.matsyuk.wizardcase.business.first_wizard.FirstWizardInteractor;
+import com.matsyuk.wizardcase.business.main_wizard.MainWizardInteractor;
 import com.matsyuk.wizardcase.presentation.license.views.LicenseView;
 import com.matsyuk.wizardcase.presentation.license.wizard_part.LicenseWizardPart;
 
-import org.reactivestreams.Subscription;
-
-import java.util.concurrent.TimeUnit;
-
-import io.reactivex.Observable;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
 
@@ -21,20 +16,20 @@ import io.reactivex.disposables.Disposable;
 public class LicensePresenter extends MvpPresenter<LicenseView> {
 
     private LicenseWizardPart licenseWizardPart;
-    private FirstWizardInteractor firstWizardInteractor;
+    private MainWizardInteractor mainWizardInteractor;
 
     private Disposable disposable;
 
-    public LicensePresenter(LicenseWizardPart licenseWizardPart, FirstWizardInteractor firstWizardInteractor) {
+    public LicensePresenter(LicenseWizardPart licenseWizardPart, MainWizardInteractor mainWizardInteractor) {
         this.licenseWizardPart = licenseWizardPart;
-        this.firstWizardInteractor = firstWizardInteractor;
+        this.mainWizardInteractor = mainWizardInteractor;
     }
 
     public void acceptLicense() {
         if (disposable != null && !disposable.isDisposed()) {
             return;
         }
-        disposable = firstWizardInteractor.acceptLicense()
+        disposable = mainWizardInteractor.acceptLicense()
                 .doOnSubscribe(disposable -> getViewState().showProgress())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(aBoolean -> {

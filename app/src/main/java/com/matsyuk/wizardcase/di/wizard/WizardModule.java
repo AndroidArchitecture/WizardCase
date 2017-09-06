@@ -1,7 +1,7 @@
 package com.matsyuk.wizardcase.di.wizard;
 
-import com.matsyuk.wizardcase.business.first_wizard.FirstWizardInteractor;
-import com.matsyuk.wizardcase.business.first_wizard.FirstWizardInteractorFake;
+import com.matsyuk.wizardcase.business.main_wizard.MainWizardInteractor;
+import com.matsyuk.wizardcase.business.main_wizard.MainWizardInteractorFake;
 import com.matsyuk.wizardcase.presentation.activation.wizard_part.ActivationWizardPart;
 import com.matsyuk.wizardcase.presentation.info.wizard_part.InfoWizardPart;
 import com.matsyuk.wizardcase.presentation.license.wizard_part.LicenseWizardPart;
@@ -13,7 +13,8 @@ import dagger.Module;
 import dagger.Provides;
 import ru.terrakok.cicerone.Router;
 
-import static com.matsyuk.wizardcase.di.DiConstants.*;
+import static com.matsyuk.wizardcase.di.DiConstants.INFO_FINISH_ANNOTATION;
+import static com.matsyuk.wizardcase.di.DiConstants.INFO_START_ANNOTATION;
 
 /**
  * @author e.matsyuk
@@ -37,8 +38,8 @@ public class WizardModule {
 
     @WizardScope
     @Provides
-    FirstWizardInteractor provideFirstWizardInteractor() {
-        return new FirstWizardInteractorFake();
+    MainWizardInteractor provideFirstWizardInteractor() {
+        return new MainWizardInteractorFake();
     }
 
     /**

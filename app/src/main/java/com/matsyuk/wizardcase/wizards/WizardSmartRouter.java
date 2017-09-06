@@ -6,8 +6,15 @@ import com.matsyuk.wizardcase.presentation.license.wizard_part.LicenseWizardPart
 
 import ru.terrakok.cicerone.Router;
 
-import static com.matsyuk.wizardcase.wizards.WizardStep.*;
-import static com.matsyuk.wizardcase.wizards.RouterConstants.*;
+import static com.matsyuk.wizardcase.wizards.RouterConstants.ACTIVATION_SCREEN;
+import static com.matsyuk.wizardcase.wizards.RouterConstants.INFO_FINISH_SCREEN;
+import static com.matsyuk.wizardcase.wizards.RouterConstants.INFO_START_SCREEN;
+import static com.matsyuk.wizardcase.wizards.RouterConstants.LICENSE_SCREEN;
+import static com.matsyuk.wizardcase.wizards.WizardStep.ACTIVATION;
+import static com.matsyuk.wizardcase.wizards.WizardStep.FINISH_INFO;
+import static com.matsyuk.wizardcase.wizards.WizardStep.LICENSE;
+import static com.matsyuk.wizardcase.wizards.WizardStep.NONE;
+import static com.matsyuk.wizardcase.wizards.WizardStep.START_INFO;
 
 /**
  * @author e.matsyuk

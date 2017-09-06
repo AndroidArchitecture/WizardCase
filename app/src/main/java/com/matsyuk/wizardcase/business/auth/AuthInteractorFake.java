@@ -17,10 +17,4 @@ public class AuthInteractorFake implements AuthInteractor {
                 .map(aLong -> login.equals(TEST) && password.equals(TEST));
     }
 
-    @Override
-    public Single<Boolean> registration(String login, String password) {
-        return Single.timer(1, TimeUnit.SECONDS)
-                .map(aLong -> true);
-    }
-
 }
