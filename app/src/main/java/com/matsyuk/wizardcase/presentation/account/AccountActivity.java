@@ -10,7 +10,7 @@ import com.matsyuk.wizardcase.di.ComponentManager;
 import com.matsyuk.wizardcase.presentation.info.views.InfoAccountFragment;
 import com.matsyuk.wizardcase.presentation.login.views.LoginFragment;
 import com.matsyuk.wizardcase.presentation.registration.views.RegistrationFragment;
-import com.matsyuk.wizardcase.wizards.activation.AccountWizardSmartRouter;
+import com.matsyuk.wizardcase.wizards.account.AccountWizardSmartRouter;
 
 import javax.inject.Inject;
 import javax.inject.Named;

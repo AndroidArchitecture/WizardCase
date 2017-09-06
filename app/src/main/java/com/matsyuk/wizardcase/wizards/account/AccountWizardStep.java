@@ -1,4 +1,4 @@
-package com.matsyuk.wizardcase.wizards.activation;
+package com.matsyuk.wizardcase.wizards.account;
 
 /**
  * @author e.matsyuk

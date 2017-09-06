@@ -1,4 +1,4 @@
-package com.matsyuk.wizardcase.wizards.activation;
+package com.matsyuk.wizardcase.wizards.account;
 
 import com.matsyuk.wizardcase.presentation.info.wizard_part.InfoWizardPart;
 import com.matsyuk.wizardcase.presentation.login.wizard_part.LoginWizardPart;
@@ -7,7 +7,7 @@ import com.matsyuk.wizardcase.presentation.registration.wizard_part.Registration
 import ru.terrakok.cicerone.Router;
 
 import static com.matsyuk.wizardcase.wizards.RouterConstants.*;
-import static com.matsyuk.wizardcase.wizards.activation.AccountWizardStep.*;
+import static com.matsyuk.wizardcase.wizards.account.AccountWizardStep.*;
 
 /**
  * @author e.matsyuk
