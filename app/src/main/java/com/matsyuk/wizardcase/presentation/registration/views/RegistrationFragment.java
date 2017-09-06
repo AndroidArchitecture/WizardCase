@@ -114,22 +114,22 @@ public class RegistrationFragment extends MvpAppCompatFragment implements Regist
 
     @Override
     public void showErrorMail() {
-        mailInput.setError(getString(R.string.fmt_account_registration_et_mail_error));
+        mailInput.setError(getString(R.string.fmt_registration_et_mail_error));
     }
 
     @Override
     public void showPasswordError() {
-        passwordInput.setError(getString(R.string.fmt_account_registration_et_password_error));
+        passwordInput.setError(getString(R.string.fmt_registration_et_password_error));
     }
 
     @Override
     public void showAuthError() {
-        Toast.makeText(getContext(), getString(R.string.fmt_account_registration_auth_error), Toast.LENGTH_SHORT).show();
+        Toast.makeText(getContext(), getString(R.string.fmt_registration_auth_error), Toast.LENGTH_SHORT).show();
     }
 
     @Override
     public void showSuccess() {
-        Toast.makeText(getContext(), getString(R.string.fmt_account_registration_auth_success), Toast.LENGTH_SHORT).show();
+        Toast.makeText(getContext(), getString(R.string.fmt_registration_auth_success), Toast.LENGTH_SHORT).show();
     }
 
     @Override

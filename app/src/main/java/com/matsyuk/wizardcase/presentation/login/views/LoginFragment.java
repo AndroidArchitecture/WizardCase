@@ -89,12 +89,12 @@ public class LoginFragment extends MvpAppCompatFragment implements LoginView, Ba
 
     @Override
     public void showSuccessLogin() {
-        Toast.makeText(getContext(), getString(R.string.fmt_account_login_auth_success), Toast.LENGTH_SHORT).show();
+        Toast.makeText(getContext(), getString(R.string.fmt_login_auth_success), Toast.LENGTH_SHORT).show();
     }
 
     @Override
     public void showErrorLogin() {
-        Toast.makeText(getContext(), getString(R.string.fmt_account_login_auth_error), Toast.LENGTH_SHORT).show();
+        Toast.makeText(getContext(), getString(R.string.fmt_login_auth_error), Toast.LENGTH_SHORT).show();
     }
 
     @Override

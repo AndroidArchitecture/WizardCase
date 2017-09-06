@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -15,7 +16,7 @@
         android:paddingBottom="8dp"
         android:textColor="@color/colorPrimaryDark"
         android:textSize="20sp"
-        android:text="@string/fmt_account_login_name" />
+        android:text="@string/fmt_login_name" />
 
     <EditText
         android:id="@+id/et_mail"
@@ -25,7 +26,7 @@
         android:layout_marginTop="24dp"
         android:layout_marginBottom="8dp"
         android:inputType="textEmailAddress"
-        android:hint="@string/fmt_account_login_et_login_hint"/>
+        android:hint="@string/fmt_login_et_login_hint"/>
 
     <EditText
         android:id="@+id/et_password"
@@ -35,7 +36,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
         android:inputType="textPassword"
-        android:hint="@string/fmt_account_login_et_password_hint"/>
+        android:hint="@string/fmt_login_et_password_hint"/>
 
     <Button
         android:id="@+id/btn_login"
@@ -45,7 +46,7 @@
         android:gravity="center"
         android:textColor="@color/colorBlack"
         android:textSize="16sp"
-        android:text="@string/fmt_account_login_btn_login"
+        android:text="@string/fmt_login_btn_login"
         android:layout_below="@+id/et_password"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
@@ -60,7 +61,7 @@
         android:layout_marginTop="16dp"
         android:textColor="@color/colorBlack"
         android:textSize="16sp"
-        android:text="@string/fmt_account_login_btn_new_account" />
+        android:text="@string/fmt_login_btn_new_account" />
 
     <ProgressBar
         android:id="@+id/progress"
@@ -68,6 +69,7 @@
         android:layout_height="wrap_content"
         android:translationZ="2dp"
         android:layout_centerInParent="true"
-        android:visibility="gone" />
+        android:visibility="gone"
+        tools:targetApi="lollipop" />
 
 </RelativeLayout>
