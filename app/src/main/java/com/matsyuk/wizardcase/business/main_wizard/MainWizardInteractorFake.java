@@ -1,4 +1,4 @@
-package com.matsyuk.wizardcase.business.first_wizard;
+package com.matsyuk.wizardcase.business.main_wizard;
 
 import java.util.concurrent.TimeUnit;
 
@@ -7,7 +7,7 @@ import io.reactivex.Single;
 /**
  * @author e.matsyuk
  */
-public class FirstWizardInteractorFake implements FirstWizardInteractor {
+public class MainWizardInteractorFake implements MainWizardInteractor {
 
     @Override
     public Single<Boolean> acceptLicense() {

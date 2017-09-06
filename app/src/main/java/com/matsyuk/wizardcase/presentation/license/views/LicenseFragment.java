@@ -12,7 +12,7 @@ import com.arellomobile.mvp.MvpAppCompatFragment;
 import com.arellomobile.mvp.presenter.InjectPresenter;
 import com.arellomobile.mvp.presenter.ProvidePresenter;
 import com.matsyuk.wizardcase.R;
-import com.matsyuk.wizardcase.business.first_wizard.FirstWizardInteractor;
+import com.matsyuk.wizardcase.business.main_wizard.MainWizardInteractor;
 import com.matsyuk.wizardcase.common.ui.BackButtonListener;
 import com.matsyuk.wizardcase.di.ComponentManager;
 import com.matsyuk.wizardcase.presentation.license.presenters.LicensePresenter;
@@ -29,11 +29,11 @@ public class LicenseFragment extends MvpAppCompatFragment implements LicenseView
     LicenseWizardPart licenseWizardPart;
 
     @Inject
-    FirstWizardInteractor firstWizardInteractor;
+    MainWizardInteractor mainWizardInteractor;
 
     @ProvidePresenter
     LicensePresenter provideLicensePresenter() {
-        return new LicensePresenter(licenseWizardPart, firstWizardInteractor);
+        return new LicensePresenter(licenseWizardPart, mainWizardInteractor);
     }
 
     @InjectPresenter

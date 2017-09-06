@@ -1,12 +1,6 @@
 <resources>
     <string name="app_name">WizardCase</string>
 
-    <string name="ac_start_wizard_title">Start wizard</string>
-    <string name="ac_app_lock_wizard_title">App lock wizard</string>
-
-    <string name="ac_main_btn_start">Start wizard</string>
-    <string name="ac_main_btn_lock">App lock wizard</string>
-
     <string name="fmt_info_name">Information</string>
     <string name="fmt_info_next">Next</string>
     <string name="fmt_info_text_start">Hello! \n This is start information!</string>
@@ -18,34 +12,13 @@
     <string name="fmt_license_text">This is very important license text! \nRead attentively!!! \nBla-bla-bla</string>
 
     <string name="fmt_activation_name">Activation</string>
-    <string name="fmt_activation_text">Please choose way of activation</string>
-    <string name="fmt_activation_btn_code">Enter activation code</string>
-    <string name="fmt_activation_btn_personal_account">To personal account</string>
     <string name="fmt_activation_btn_free">Free</string>
 
-    <string name="fmt_code_activation_name">Code activation</string>
-    <string name="fmt_code_activation_et_code_hint">Enter your activation code</string>
-    <string name="fmt_code_activation_btn_next">Next</string>
-
-    <string name="fmt_account_login_name">Account Login</string>
     <string name="fmt_account_login_et_login_hint">Enter your login</string>
     <string name="fmt_account_login_et_password_hint">Enter your password</string>
     <string name="fmt_account_login_btn_login">Login</string>
-    <string name="fmt_account_login_btn_forgot">Forgot password?</string>
-    <string name="fmt_account_login_btn_new_account">New account</string>
     <string name="fmt_account_login_auth_success">Success login</string>
     <string name="fmt_account_login_auth_error">Error login</string>
     <string name="fmt_account_login_auth_free">Free enter</string>
 
-    <string name="fmt_account_registration_name">Account Registration</string>
-    <string name="fmt_account_registration_et_mail_hint">Enter your mail</string>
-    <string name="fmt_account_registration_et_password_hint">Enter your password</string>
-    <string name="fmt_account_registration_et_retry_password_hint">Retry your password</string>
-    <string name="fmt_account_registration_btn_reg">Registration</string>
-    <string name="fmt_account_registration_et_mail_error">Incorrect mail</string>
-    <string name="fmt_account_registration_et_password_error">Incorrect password</string>
-    <string name="fmt_account_registration_auth_success">Success registration</string>
-    <string name="fmt_account_registration_auth_error">Error registration</string>
-
-    <string name="ac_login_wizard_title">Login</string>
 </resources>
