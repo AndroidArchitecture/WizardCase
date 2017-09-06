@@ -53,14 +53,14 @@ public class RegistrationPresenter extends MvpPresenter<RegistrationView> {
         getViewState().hideProgress();
         if (success) {
             getViewState().showSuccess();
-            registrationWizardPart.accountRegistrationWizardSuccess();
+            registrationWizardPart.registrationWizardSuccess();
         } else {
             getViewState().showAuthError();
         }
     }
 
     public void clickBack() {
-        registrationWizardPart.accountRegistrationWizardBack();
+        registrationWizardPart.registrationWizardBack();
     }
 
     @Override

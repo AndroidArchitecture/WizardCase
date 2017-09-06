@@ -5,6 +5,6 @@ import io.reactivex.Single;
 /**
  * @author e.matsyuk
  */
-public interface FirstWizardInteractor {
+public interface MainWizardInteractor {
     Single<Boolean> acceptLicense();
 }

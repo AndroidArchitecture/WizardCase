@@ -1,7 +1,7 @@
 package com.matsyuk.wizardcase.di.main_wizard;
 
-import com.matsyuk.wizardcase.business.first_wizard.FirstWizardInteractor;
-import com.matsyuk.wizardcase.business.first_wizard.FirstWizardInteractorFake;
+import com.matsyuk.wizardcase.business.first_wizard.MainWizardInteractor;
+import com.matsyuk.wizardcase.business.first_wizard.MainWizardInteractorFake;
 import com.matsyuk.wizardcase.presentation.activation.wizard_part.ActivationWizardPart;
 import com.matsyuk.wizardcase.presentation.info.wizard_part.InfoWizardPart;
 import com.matsyuk.wizardcase.presentation.license.wizard_part.LicenseWizardPart;
@@ -38,8 +38,8 @@ public class WizardModule {
 
     @WizardScope
     @Provides
-    FirstWizardInteractor provideFirstWizardInteractor() {
-        return new FirstWizardInteractorFake();
+    MainWizardInteractor provideFirstWizardInteractor() {
+        return new MainWizardInteractorFake();
     }
 
     /**

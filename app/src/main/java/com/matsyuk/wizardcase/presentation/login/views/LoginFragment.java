@@ -57,18 +57,18 @@ public class LoginFragment extends MvpAppCompatFragment implements LoginView, Ba
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fmt_login, container, false);
-
+        //
         progressBar = (ProgressBar)view.findViewById(R.id.progress);
-
+        //
         loginInput = (EditText)view.findViewById(R.id.et_mail);
         passwordInput = (EditText)view.findViewById(R.id.et_password);
-
+        //
         loginButton = (Button)view.findViewById(R.id.btn_login);
         loginButton.setOnClickListener(v -> loginPresenter.clickLogin(loginInput.getText().toString(), passwordInput.getText().toString()));
-
+        //
         Button newAccountButton = (Button)view.findViewById(R.id.btn_reg);
         newAccountButton.setOnClickListener(v -> loginPresenter.clickNewAccount());
-
+        //
         return view;
     }
 

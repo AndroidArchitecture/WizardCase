@@ -22,15 +22,15 @@ public class AccountNavigationModule {
         cicerone = Cicerone.create();
     }
 
-    @Provides
     @AccountWizardScope
+    @Provides
     @Named(ACCOUNT_WIZARD_ANNOTATION)
     Router provideRouter() {
         return cicerone.getRouter();
     }
 
-    @Provides
     @AccountWizardScope
+    @Provides
     @Named(ACCOUNT_WIZARD_ANNOTATION)
     NavigatorHolder provideNavigatorHolder() {
         return cicerone.getNavigatorHolder();

@@ -42,18 +42,18 @@ public class LoginPresenter extends MvpPresenter<LoginView> {
         getViewState().hideProgress();
         if (success) {
             getViewState().showSuccessLogin();
-            loginWizardPart.accountLoginWizardSuccess();
+            loginWizardPart.loginWizardSuccess();
         } else {
             getViewState().showErrorLogin();
         }
     }
 
     public void clickNewAccount() {
-        loginWizardPart.accountLoginWizardNewAccount();
+        loginWizardPart.loginWizardNewAccount();
     }
 
     public void clickBack() {
-        loginWizardPart.accountLoginWizardBack();
+        loginWizardPart.loginWizardBack();
     }
 
     public void inputData(Observable<String> loginObservable, Observable<String> passwordObservable) {

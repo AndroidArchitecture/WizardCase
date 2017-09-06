@@ -28,7 +28,6 @@ public class AccountWizardSmartRouter {
 
         @Override
         public void infoWizardBack() {
-            accountWizardStep = NONE;
             router.finishChain();
         }
 
@@ -37,21 +36,19 @@ public class AccountWizardSmartRouter {
     private final LoginWizardPart loginWizardPart = new LoginWizardPart() {
 
         @Override
-        public void accountLoginWizardSuccess() {
-            accountWizardStep = NONE;
+        public void loginWizardSuccess() {
             router.finishChain();
             accountWizardResult.onSuccess();
         }
 
         @Override
-        public void accountLoginWizardBack() {
-            accountWizardStep = NONE;
+        public void loginWizardBack() {
             router.finishChain();
             accountWizardResult.onBack();
         }
 
         @Override
-        public void accountLoginWizardNewAccount() {
+        public void loginWizardNewAccount() {
             accountWizardStep = REGISTRATION;
             router.navigateTo(REGISTRATION_SCREEN);
         }
@@ -61,14 +58,13 @@ public class AccountWizardSmartRouter {
     private final RegistrationWizardPart registrationWizardPart = new RegistrationWizardPart() {
 
         @Override
-        public void accountRegistrationWizardSuccess() {
-            accountWizardStep = NONE;
+        public void registrationWizardSuccess() {
             router.finishChain();
             accountWizardResult.onSuccess();
         }
 
         @Override
-        public void accountRegistrationWizardBack() {
+        public void registrationWizardBack() {
             accountWizardStep = LOGIN;
             router.backTo(LOGIN_SCREEN);
         }
