@@ -1,4 +1,4 @@
-package com.matsyuk.wizardcase.business.main_wizard;
+package com.matsyuk.wizardcase.business.license;
 
 import java.util.concurrent.TimeUnit;
 
@@ -7,7 +7,7 @@ import io.reactivex.Single;
 /**
  * @author e.matsyuk
  */
-public class MainWizardInteractorFake implements MainWizardInteractor {
+public class LicenseInteractorFake implements LicenseInteractor {
 
     @Override
     public Single<Boolean> acceptLicense() {
