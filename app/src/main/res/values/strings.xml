@@ -9,7 +9,7 @@
 
     <string name="fmt_license_name">License</string>
     <string name="fmt_license_agree">Agree and continue</string>
-    <string name="fmt_license_text">This is very important license text! \nRead attentively!!! \nBla-bla-bla</string>
+    <string name="fmt_license_text">This is very important license text! \nAttention please!!! \nBla-bla-bla</string>
 
     <string name="fmt_activation_name">Activation</string>
     <string name="fmt_activation_text">Please choose way of activation</string>
