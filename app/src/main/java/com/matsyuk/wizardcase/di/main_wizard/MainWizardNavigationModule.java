@@ -1,4 +1,4 @@
-package com.matsyuk.wizardcase.di.wizard;
+package com.matsyuk.wizardcase.di.main_wizard;
 
 import dagger.Module;
 import dagger.Provides;
@@ -10,21 +10,21 @@ import ru.terrakok.cicerone.Router;
  * @author e.matsyuk
  */
 @Module
-public class WizardNavigationModule {
+public class MainWizardNavigationModule {
 
     private Cicerone<Router> cicerone;
 
-    public WizardNavigationModule() {
+    public MainWizardNavigationModule() {
         cicerone = Cicerone.create();
     }
 
-    @WizardScope
+    @MainWizardScope
     @Provides
     Router provideRouter() {
         return cicerone.getRouter();
     }
 
-    @WizardScope
+    @MainWizardScope
     @Provides
     NavigatorHolder provideNavigatorHolder() {
         return cicerone.getNavigatorHolder();

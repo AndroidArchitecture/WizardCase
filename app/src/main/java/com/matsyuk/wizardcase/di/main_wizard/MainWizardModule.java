@@ -1,11 +1,11 @@
-package com.matsyuk.wizardcase.di.wizard;
+package com.matsyuk.wizardcase.di.main_wizard;
 
 import com.matsyuk.wizardcase.business.license.LicenseInteractor;
 import com.matsyuk.wizardcase.business.license.LicenseInteractorFake;
 import com.matsyuk.wizardcase.presentation.activation.wizard_part.ActivationWizardPart;
 import com.matsyuk.wizardcase.presentation.info.wizard_part.InfoWizardPart;
 import com.matsyuk.wizardcase.presentation.license.wizard_part.LicenseWizardPart;
-import com.matsyuk.wizardcase.wizards.WizardSmartRouter;
+import com.matsyuk.wizardcase.wizards.main.MainWizardSmartRouter;
 
 import javax.inject.Named;
 
@@ -20,23 +20,23 @@ import static com.matsyuk.wizardcase.di.DiConstants.INFO_START_ANNOTATION;
  * @author e.matsyuk
  */
 @Module
-public class WizardModule {
+public class MainWizardModule {
 
     /**
      * Smart router
      */
 
-    @WizardScope
+    @MainWizardScope
     @Provides
-    WizardSmartRouter provideStartWizardManager(Router router) {
-        return new WizardSmartRouter(router);
+    MainWizardSmartRouter provideStartWizardManager(Router router) {
+        return new MainWizardSmartRouter(router);
     }
 
     /**
      * Interactors
      */
 
-    @WizardScope
+    @MainWizardScope
     @Provides
     LicenseInteractor provideFirstWizardInteractor() {
         return new LicenseInteractorFake();
@@ -46,30 +46,30 @@ public class WizardModule {
      * Wizard parts
      */
 
-    @WizardScope
+    @MainWizardScope
     @Provides
     @Named(INFO_START_ANNOTATION)
-    InfoWizardPart provideInfoStartWizardPartStart(WizardSmartRouter wizardSmartRouter) {
-        return wizardSmartRouter.getInfoStartWizardPart();
+    InfoWizardPart provideInfoStartWizardPartStart(MainWizardSmartRouter mainWizardSmartRouter) {
+        return mainWizardSmartRouter.getInfoStartWizardPart();
     }
 
-    @WizardScope
+    @MainWizardScope
     @Provides
-    LicenseWizardPart provideLicenseWizardPart(WizardSmartRouter wizardSmartRouter) {
-        return wizardSmartRouter.getLicenseWizardPart();
+    LicenseWizardPart provideLicenseWizardPart(MainWizardSmartRouter mainWizardSmartRouter) {
+        return mainWizardSmartRouter.getLicenseWizardPart();
     }
 
-    @WizardScope
+    @MainWizardScope
     @Provides
-    ActivationWizardPart provideActivationWizardPart(WizardSmartRouter wizardSmartRouter) {
-        return wizardSmartRouter.getActivationWizardPart();
+    ActivationWizardPart provideActivationWizardPart(MainWizardSmartRouter mainWizardSmartRouter) {
+        return mainWizardSmartRouter.getActivationWizardPart();
     }
 
-    @WizardScope
+    @MainWizardScope
     @Provides
     @Named(INFO_FINISH_ANNOTATION)
-    InfoWizardPart provideInfoFinishWizardPartStart(WizardSmartRouter wizardSmartRouter) {
-        return wizardSmartRouter.getInfoFinishWizardPart();
+    InfoWizardPart provideInfoFinishWizardPartStart(MainWizardSmartRouter mainWizardSmartRouter) {
+        return mainWizardSmartRouter.getInfoFinishWizardPart();
     }
 
 }

@@ -1,4 +1,4 @@
-package com.matsyuk.wizardcase.di.wizard;
+package com.matsyuk.wizardcase.di.main_wizard;
 
 import com.matsyuk.wizardcase.presentation.activation.views.ActivationFragment;
 import com.matsyuk.wizardcase.presentation.info.views.InfoFinishFragment;
@@ -11,13 +11,13 @@ import dagger.Subcomponent;
 /**
  * @author e.matsyuk
  */
-@WizardScope
-@Subcomponent(modules = {WizardModule.class, WizardNavigationModule.class})
-public interface WizardComponent {
+@MainWizardScope
+@Subcomponent(modules = {MainWizardModule.class, MainWizardNavigationModule.class})
+public interface MainWizardComponent {
 
     @Subcomponent.Builder
     interface Builder {
-        WizardComponent build();
+        MainWizardComponent build();
     }
 
     void inject(MainActivity mainActivity);
