@@ -11,7 +11,7 @@ import dagger.Subcomponent;
  * @author e.matsyuk
  */
 @AccountWizardScope
-@Subcomponent(modules = {AccountNavigationModule.class, AccountWizardModule.class})
+@Subcomponent(modules = {AccountWizardNavigationModule.class, AccountWizardModule.class})
 public interface AccountWizardComponent {
 
     @Subcomponent.Builder

@@ -3,7 +3,7 @@ package com.matsyuk.wizardcase.di;
 import com.matsyuk.wizardcase.di.account_wizard.AccountWizardComponent;
 import com.matsyuk.wizardcase.di.app.AppComponent;
 import com.matsyuk.wizardcase.di.app.DaggerAppComponent;
-import com.matsyuk.wizardcase.di.main_wizard.WizardComponent;
+import com.matsyuk.wizardcase.di.main_wizard.MainWizardComponent;
 
 /**
  * @author e.matsyuk
@@ -13,7 +13,7 @@ public class ComponentManager {
     private static volatile ComponentManager instance;
 
     private AppComponent appComponent;
-    private WizardComponent wizardComponent;
+    private MainWizardComponent mainWizardComponent;
     private AccountWizardComponent accountWizardComponent;
 
     public static ComponentManager getInstance() {
@@ -42,20 +42,20 @@ public class ComponentManager {
     }
 
     /**
-     * WizardComponent
+     * MainWizardComponent
      */
 
-    public WizardComponent getWizardComponent() {
-        if (wizardComponent == null) {
-            wizardComponent = getAppComponent()
+    public MainWizardComponent getMainWizardComponent() {
+        if (mainWizardComponent == null) {
+            mainWizardComponent = getAppComponent()
                     .wizardComponentBuilder()
                     .build();
         }
-        return wizardComponent;
+        return mainWizardComponent;
     }
 
     public void clearWizardComponent() {
-        wizardComponent = null;
+        mainWizardComponent = null;
     }
 
     /**
@@ -64,7 +64,7 @@ public class ComponentManager {
 
     public AccountWizardComponent getAccountWizardComponent() {
         if (accountWizardComponent == null) {
-            accountWizardComponent = getWizardComponent()
+            accountWizardComponent = getMainWizardComponent()
                     .accoutWizardComponentBuilder()
                     .build();
         }

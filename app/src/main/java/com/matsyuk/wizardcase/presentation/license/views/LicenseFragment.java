@@ -43,7 +43,7 @@ public class LicenseFragment extends MvpAppCompatFragment implements LicenseView
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
-        ComponentManager.getInstance().getWizardComponent().inject(this);
+        ComponentManager.getInstance().getMainWizardComponent().inject(this);
         super.onCreate(savedInstanceState);
     }
 

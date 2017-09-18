@@ -20,13 +20,13 @@ import static com.matsyuk.wizardcase.di.DiConstants.*;
  * @author e.matsyuk
  */
 @Module
-public class WizardModule {
+public class MainWizardModule {
 
     /**
      * Smart router
      */
 
-    @WizardScope
+    @MainWizardScope
     @Provides
     MainWizardSmartRouter provideStartWizardManager(@Named(MAIN_WIZARD_ANNOTATION) Router router) {
         return new MainWizardSmartRouter(router);
@@ -36,7 +36,7 @@ public class WizardModule {
      * Interactors
      */
 
-    @WizardScope
+    @MainWizardScope
     @Provides
     LicenseInteractor provideFirstWizardInteractor() {
         return new LicenseInteractorFake();
@@ -46,33 +46,33 @@ public class WizardModule {
      * Wizard parts
      */
 
-    @WizardScope
+    @MainWizardScope
     @Provides
     @Named(INFO_START_ANNOTATION)
     InfoWizardPart provideInfoStartWizardPartStart(MainWizardSmartRouter mainWizardSmartRouter) {
         return mainWizardSmartRouter.getInfoStartWizardPart();
     }
 
-    @WizardScope
+    @MainWizardScope
     @Provides
     LicenseWizardPart provideLicenseWizardPart(MainWizardSmartRouter mainWizardSmartRouter) {
         return mainWizardSmartRouter.getLicenseWizardPart();
     }
 
-    @WizardScope
+    @MainWizardScope
     @Provides
     ActivationWizardPart provideActivationWizardPart(MainWizardSmartRouter mainWizardSmartRouter) {
         return mainWizardSmartRouter.getActivationWizardPart();
     }
 
-    @WizardScope
+    @MainWizardScope
     @Provides
     @Named(INFO_FINISH_ANNOTATION)
     InfoWizardPart provideInfoFinishWizardPartStart(MainWizardSmartRouter mainWizardSmartRouter) {
         return mainWizardSmartRouter.getInfoFinishWizardPart();
     }
 
-    @WizardScope
+    @MainWizardScope
     @Provides
     AccountWizardResult provideAccountWizardResult(MainWizardSmartRouter mainWizardSmartRouter) {
         return mainWizardSmartRouter.getAccountWizardResult();

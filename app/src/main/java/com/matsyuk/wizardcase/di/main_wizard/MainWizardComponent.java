@@ -12,15 +12,15 @@ import dagger.Subcomponent;
 /**
  * @author e.matsyuk
  */
-@WizardScope
-@Subcomponent(modules = {WizardModule.class, WizardNavigationModule.class})
-public interface WizardComponent {
+@MainWizardScope
+@Subcomponent(modules = {MainWizardModule.class, MainWizardNavigationModule.class})
+public interface MainWizardComponent {
 
     AccountWizardComponent.Builder accoutWizardComponentBuilder();
 
     @Subcomponent.Builder
     interface Builder {
-        WizardComponent build();
+        MainWizardComponent build();
     }
 
     void inject(MainActivity mainActivity);

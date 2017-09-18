@@ -79,7 +79,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        ComponentManager.getInstance().getWizardComponent().inject(this);
+        ComponentManager.getInstance().getMainWizardComponent().inject(this);
         setContentView(R.layout.ac_main);
     }
 
