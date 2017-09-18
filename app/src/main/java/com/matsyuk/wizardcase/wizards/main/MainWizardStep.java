@@ -1,9 +1,9 @@
-package com.matsyuk.wizardcase.wizards;
+package com.matsyuk.wizardcase.wizards.main;
 
 /**
  * @author e.matsyuk
  */
-public enum WizardStep {
+public enum MainWizardStep {
     NONE,
     START_INFO,
     LICENSE,

@@ -10,7 +10,7 @@ import com.matsyuk.wizardcase.di.ComponentManager;
 import com.matsyuk.wizardcase.presentation.activation.views.ActivationFragment;
 import com.matsyuk.wizardcase.presentation.info.views.InfoFragment;
 import com.matsyuk.wizardcase.presentation.license.views.LicenseFragment;
-import com.matsyuk.wizardcase.wizards.WizardSmartRouter;
+import com.matsyuk.wizardcase.wizards.main.MainWizardSmartRouter;
 
 import javax.inject.Inject;
 
@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
     NavigatorHolder navigatorHolder;
 
     @Inject
-    WizardSmartRouter wizardSmartRouter;
+    MainWizardSmartRouter mainWizardSmartRouter;
 
     private Navigator navigator = new SupportFragmentNavigator(getSupportFragmentManager(), R.id.start_container) {
 
@@ -56,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        ComponentManager.getInstance().getMainComponent().inject(this);
+        ComponentManager.getInstance().getMainMainComponent().inject(this);
         setContentView(R.layout.activity_main);
     }
 
@@ -75,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
     public void onResume() {
         super.onResume();
         navigatorHolder.setNavigator(navigator);
-        wizardSmartRouter.startWizard();
+        mainWizardSmartRouter.startWizard();
     }
 
     @Override

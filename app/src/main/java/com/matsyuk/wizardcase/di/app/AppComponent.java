@@ -1,6 +1,6 @@
 package com.matsyuk.wizardcase.di.app;
 
-import com.matsyuk.wizardcase.di.wizard.WizardComponent;
+import com.matsyuk.wizardcase.di.main_wizard.MainWizardComponent;
 
 import javax.inject.Singleton;
 
@@ -12,5 +12,5 @@ import dagger.Component;
 @Singleton
 @Component(modules = {AppModule.class})
 public interface AppComponent {
-    WizardComponent.Builder wizardComponentBuilder();
+    MainWizardComponent.Builder wizardComponentBuilder();
 }

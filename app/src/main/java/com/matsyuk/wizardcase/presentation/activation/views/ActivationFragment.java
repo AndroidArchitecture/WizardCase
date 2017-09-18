@@ -49,7 +49,7 @@ public class ActivationFragment extends MvpAppCompatFragment implements Activati
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
-        ComponentManager.getInstance().getMainComponent().inject(this);
+        ComponentManager.getInstance().getMainMainComponent().inject(this);
         super.onCreate(savedInstanceState);
     }
 

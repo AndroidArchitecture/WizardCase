@@ -1,4 +1,4 @@
-package com.matsyuk.wizardcase.wizards;
+package com.matsyuk.wizardcase.wizards.main;
 
 import com.matsyuk.wizardcase.presentation.activation.wizard_part.ActivationWizardPart;
 import com.matsyuk.wizardcase.presentation.info.wizard_part.InfoWizardPart;
@@ -6,22 +6,21 @@ import com.matsyuk.wizardcase.presentation.license.wizard_part.LicenseWizardPart
 
 import ru.terrakok.cicerone.Router;
 
-import static com.matsyuk.wizardcase.wizards.WizardStep.*;
 import static com.matsyuk.wizardcase.wizards.RouterConstants.*;
 
 /**
  * @author e.matsyuk
  */
-public class WizardSmartRouter {
+public class MainWizardSmartRouter {
 
     private final Router router;
-    private WizardStep currentWizardStep = NONE;
+    private MainWizardStep currentMainWizardStep = MainWizardStep.NONE;
 
     private final InfoWizardPart infoWizardPart = new InfoWizardPart() {
 
         @Override
         public void infoWizardNext() {
-            currentWizardStep = LICENSE;
+            currentMainWizardStep = MainWizardStep.LICENSE;
             router.navigateTo(LICENSE_SCREEN);
         }
 
@@ -36,13 +35,13 @@ public class WizardSmartRouter {
 
         @Override
         public void licenseWizardAccept() {
-            currentWizardStep = ACTIVATION;
+            currentMainWizardStep = MainWizardStep.ACTIVATION;
             router.navigateTo(ACTIVATION_SCREEN);
         }
 
         @Override
         public void licenseWizardBack() {
-            currentWizardStep = WizardStep.START_INFO;
+            currentMainWizardStep = MainWizardStep.START_INFO;
             router.backTo(INFO_SCREEN);
         }
 
@@ -52,33 +51,33 @@ public class WizardSmartRouter {
 
         @Override
         public void activationWizardFreeNext() {
-            currentWizardStep = FINISH_INFO;
+            currentMainWizardStep = MainWizardStep.FINISH_INFO;
             router.finishChain();
         }
 
         @Override
         public void activationLoginWizardSuccess() {
-            currentWizardStep = FINISH_INFO;
+            currentMainWizardStep = MainWizardStep.FINISH_INFO;
             router.finishChain();
         }
 
         @Override
         public void activationWizardBack() {
-            currentWizardStep = WizardStep.LICENSE;
+            currentMainWizardStep = MainWizardStep.LICENSE;
             router.backTo(LICENSE_SCREEN);
         }
 
     };
 
-    public WizardSmartRouter(Router router) {
+    public MainWizardSmartRouter(Router router) {
         this.router = router;
     }
 
     public void startWizard() {
-        if (currentWizardStep != NONE) {
+        if (currentMainWizardStep != MainWizardStep.NONE) {
             return;
         }
-        currentWizardStep = START_INFO;
+        currentMainWizardStep = MainWizardStep.START_INFO;
         router.navigateTo(INFO_SCREEN);
     }
 
