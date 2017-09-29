@@ -5,7 +5,7 @@ import com.matsyuk.wizardcase.business.license.LicenseInteractorFake;
 import com.matsyuk.wizardcase.presentation.activation.wizard_part.ActivationWizardPart;
 import com.matsyuk.wizardcase.presentation.info.wizard_part.InfoWizardPart;
 import com.matsyuk.wizardcase.presentation.license.wizard_part.LicenseWizardPart;
-import com.matsyuk.wizardcase.wizards.account.AccountWizardResult;
+import com.matsyuk.wizardcase.wizards.account.AccountWizardPart;
 import com.matsyuk.wizardcase.wizards.main.MainWizardSmartRouter;
 
 import javax.inject.Named;
@@ -74,8 +74,8 @@ public class MainWizardModule {
 
     @MainWizardScope
     @Provides
-    AccountWizardResult provideAccountWizardResult(MainWizardSmartRouter mainWizardSmartRouter) {
-        return mainWizardSmartRouter.getAccountWizardResult();
+    AccountWizardPart provideAccountWizardResult(MainWizardSmartRouter mainWizardSmartRouter) {
+        return mainWizardSmartRouter.getAccountWizardPart();
     }
 
 }

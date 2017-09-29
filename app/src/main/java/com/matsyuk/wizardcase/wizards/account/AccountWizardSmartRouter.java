@@ -15,7 +15,7 @@ import static com.matsyuk.wizardcase.wizards.account.AccountWizardStep.*;
 public class AccountWizardSmartRouter {
 
     private final Router router;
-    private final AccountWizardResult accountWizardResult;
+    private final AccountWizardPart accountWizardPart;
     private AccountWizardStep accountWizardStep = NONE;
 
     private final InfoWizardPart infoWizardPart = new InfoWizardPart() {
@@ -38,13 +38,13 @@ public class AccountWizardSmartRouter {
         @Override
         public void loginWizardSuccess() {
             router.finishChain();
-            accountWizardResult.onSuccess();
+            accountWizardPart.onSuccess();
         }
 
         @Override
         public void loginWizardBack() {
             router.finishChain();
-            accountWizardResult.onBack();
+            accountWizardPart.onBack();
         }
 
         @Override
@@ -60,7 +60,7 @@ public class AccountWizardSmartRouter {
         @Override
         public void registrationWizardSuccess() {
             router.finishChain();
-            accountWizardResult.onSuccess();
+            accountWizardPart.onSuccess();
         }
 
         @Override
@@ -72,9 +72,9 @@ public class AccountWizardSmartRouter {
     };
 
     public AccountWizardSmartRouter(Router router,
-                                    AccountWizardResult accountWizardResult) {
+                                    AccountWizardPart accountWizardPart) {
         this.router = router;
-        this.accountWizardResult = accountWizardResult;
+        this.accountWizardPart = accountWizardPart;
     }
 
     public void startWizard() {

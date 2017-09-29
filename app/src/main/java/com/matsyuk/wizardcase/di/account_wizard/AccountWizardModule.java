@@ -3,7 +3,7 @@ package com.matsyuk.wizardcase.di.account_wizard;
 import com.matsyuk.wizardcase.presentation.info.wizard_part.InfoWizardPart;
 import com.matsyuk.wizardcase.presentation.login.wizard_part.LoginWizardPart;
 import com.matsyuk.wizardcase.presentation.registration.wizard_part.RegistrationWizardPart;
-import com.matsyuk.wizardcase.wizards.account.AccountWizardResult;
+import com.matsyuk.wizardcase.wizards.account.AccountWizardPart;
 import com.matsyuk.wizardcase.wizards.account.AccountWizardSmartRouter;
 
 import javax.inject.Named;
@@ -27,8 +27,8 @@ public class AccountWizardModule {
     @AccountWizardScope
     @Provides
     public AccountWizardSmartRouter provideAccountWizardSmartRouter(@Named(ACCOUNT_WIZARD_ANNOTATION) Router router,
-                                                                    AccountWizardResult accountWizardResult) {
-        return new AccountWizardSmartRouter(router, accountWizardResult);
+                                                                    AccountWizardPart accountWizardPart) {
+        return new AccountWizardSmartRouter(router, accountWizardPart);
     }
 
     /**

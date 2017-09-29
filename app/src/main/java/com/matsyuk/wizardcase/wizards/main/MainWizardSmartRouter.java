@@ -3,7 +3,7 @@ package com.matsyuk.wizardcase.wizards.main;
 import com.matsyuk.wizardcase.presentation.activation.wizard_part.ActivationWizardPart;
 import com.matsyuk.wizardcase.presentation.info.wizard_part.InfoWizardPart;
 import com.matsyuk.wizardcase.presentation.license.wizard_part.LicenseWizardPart;
-import com.matsyuk.wizardcase.wizards.account.AccountWizardResult;
+import com.matsyuk.wizardcase.wizards.account.AccountWizardPart;
 
 import ru.terrakok.cicerone.Router;
 
@@ -69,7 +69,7 @@ public class MainWizardSmartRouter {
 
     };
 
-    private final AccountWizardResult accountWizardResult = new AccountWizardResult() {
+    private final AccountWizardPart accountWizardPart = new AccountWizardPart() {
 
         @Override
         public void onSuccess() {
@@ -127,8 +127,8 @@ public class MainWizardSmartRouter {
         return infoFinishWizardPart;
     }
 
-    public AccountWizardResult getAccountWizardResult() {
-        return accountWizardResult;
+    public AccountWizardPart getAccountWizardPart() {
+        return accountWizardPart;
     }
 
 }
